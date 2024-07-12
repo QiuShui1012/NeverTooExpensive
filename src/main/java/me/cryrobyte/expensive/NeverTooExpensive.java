@@ -9,6 +9,6 @@ public class NeverTooExpensive implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("NeverTooExpensive made by CryroByte, because he was annoyed!");
+		LOGGER.info("NeverTooExpensive made by CryroByte, because he was annoyed! (Updated by QiuShui1012)");
 	}
 }

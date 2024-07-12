@@ -6,11 +6,11 @@
   "name": "NeverTooExpensive",
   "description": "Basically removes the \"Too Expensive\" message in anvils so you can enchant without hindrance",
   "authors": [
-    "CryroByte"
+    "CryroByte",
+    "QiuShui1012"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/QiuShui1012/NeverTooExpensive"
   },
 
   "license": "CC0-1.0",
@@ -27,9 +27,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
-    "fabric": "*",
-    "minecraft": "~1.19",
+    "fabricloader": ">=0.15.11",
+    "fabric-api": "*",
+    "minecraft": "~1.20.1",
     "java": ">=17"
   },
   "suggests": {
