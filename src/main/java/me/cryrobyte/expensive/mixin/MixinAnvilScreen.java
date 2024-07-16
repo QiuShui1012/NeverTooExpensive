@@ -1,7 +1,6 @@
 package me.cryrobyte.expensive.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.AnvilScreen;
 import net.minecraft.client.gui.screen.ingame.ForgingScreen;
 import net.minecraft.client.util.math.MatrixStack;
@@ -49,7 +48,7 @@ public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler>
             if (text != null) {
                 int k = this.backgroundWidth - 8 - this.textRenderer.getWidth(text) - 2;
                 fill(matrices, k - 2, 67, this.backgroundWidth - 8, 79, 1325400064);
-                DrawableHelper.drawTextWithShadow(matrices, this.textRenderer, text, k, 69, j);
+                this.textRenderer.drawWithShadow(matrices, text, (float) k, 69.0F, j);
             }
         }
     }
