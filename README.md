@@ -4,8 +4,6 @@ Basically Removes the "Too Expensive" from anvils in Minecraft.
 
 ## English
 
-***
-
 ### Now supported
 
 |          | 1.16.5 | 1.18.2 | 1.19.4 | 1.20.1 |  1.20.2  | 1.20.4 |  1.20.6  | 1.21 |
@@ -22,11 +20,7 @@ Basically Removes the "Too Expensive" from anvils in Minecraft.
 |  Forge   |   √    |   √    |   √    |        |          |        |          |      |
 | NeoForge |        |        |        |   √    |          |   √    |          |  √   |
 
-***
-
 ## 中文
-
-***
 
 ### 已支持版本
 
@@ -43,5 +37,3 @@ Basically Removes the "Too Expensive" from anvils in Minecraft.
 |  Fabric  |   √    |   √    |   √    |   √    |    √     |   √    |    √     |  √   |
 |  Forge   |   √    |   √    |   √    |        |          |        |          |      |
 | NeoForge |        |        |        |   √    |          |   √    |          |  √   |
-
-***
