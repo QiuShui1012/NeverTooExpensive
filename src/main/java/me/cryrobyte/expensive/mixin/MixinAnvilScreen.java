@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.AnvilScreenHandler;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -39,7 +40,7 @@ public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler>
             if (!this.handler.getSlot(2).hasStack()) {
                 text = null;
             } else {
-                text = Text.translatable("container.repair.cost", i);
+                text = new TranslatableText("container.repair.cost", i);
                 if (!this.handler.getSlot(2).canTakeItems(this.player)) {
                     j = 16736352;
                 }
