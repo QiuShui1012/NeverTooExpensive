@@ -4,22 +4,16 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.ingame.AnvilScreen;
 import net.minecraft.client.gui.screen.ingame.ForgingScreen;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.AnvilScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(AnvilScreen.class)
 public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler> {
-
-    @Shadow @Final private PlayerEntity player;
-
     public MixinAnvilScreen(AnvilScreenHandler handler, PlayerInventory playerInventory, Text title, Identifier texture) {
         super(handler, playerInventory, title, texture);
     }
@@ -41,7 +35,7 @@ public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler>
                 text = null;
             } else {
                 text = new TranslatableText("container.repair.cost", i);
-                if (!this.handler.getSlot(2).canTakeItems(this.player)) {
+                if (!this.handler.getSlot(2).canTakeItems(this.playerInventory.player)) {
                     j = 16736352;
                 }
             }
