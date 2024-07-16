@@ -1,9 +1,10 @@
 package me.cryrobyte.expensive.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.ingame.AnvilScreen;
 import net.minecraft.client.gui.screen.ingame.ForgingScreen;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.AnvilScreenHandler;
@@ -28,9 +29,9 @@ public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler>
      * @reason Needed to overwrite due to the int J value not being set correctly
      */
     @Overwrite
-    public void drawForeground(DrawContext context, int mouseX, int mouseY) {
+    public void drawForeground(MatrixStack matrices, int mouseX, int mouseY) {
         RenderSystem.disableBlend();
-        super.drawForeground(context, mouseX, mouseY);
+        super.drawForeground(matrices, mouseX, mouseY);
 
         int i = this.handler.getLevelCost();
         if (i > 0) {
@@ -47,8 +48,8 @@ public abstract class MixinAnvilScreen extends ForgingScreen<AnvilScreenHandler>
 
             if (text != null) {
                 int k = this.backgroundWidth - 8 - this.textRenderer.getWidth(text) - 2;
-                context.fill(k - 2, 67, this.backgroundWidth - 8, 79, 1325400064);
-                context.drawTextWithShadow(this.textRenderer, text, k, 69, j);
+                fill(matrices, k - 2, 67, this.backgroundWidth - 8, 79, 1325400064);
+                DrawableHelper.drawTextWithShadow(matrices, this.textRenderer, text, k, 69, j);
             }
         }
     }
