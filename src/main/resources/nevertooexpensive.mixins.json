@@ -2,12 +2,12 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.cryrobyte.expensive.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MixinAnvilScreen",
     "MixinAnvilScreenHandler"
   ],
   "client": [
+    "MixinAnvilScreen"
   ],
   "injectors": {
     "defaultRequire": 1
